@@ -11,7 +11,7 @@ document.getElementById("startSlideshow").addEventListener("click", function() {
     }, 27000); // 9 images × 3 seconds each
 });
 
-// Function to handle the slideshow manually
+// Function to handle the slideshow with smooth fade transitions
 function startSlideshow() {
     let slides = document.querySelectorAll(".slide");
     let index = 0;
@@ -21,7 +21,12 @@ function startSlideshow() {
         return;
     }
 
-    slides.forEach(slide => slide.style.opacity = "0"); // Hide all
+    slides.forEach(slide => {
+        slide.style.opacity = "0";
+        slide.style.position = "absolute";
+        slide.style.transition = "opacity 1s ease-in-out"; // Smooth fade
+    });
+
     slides[index].style.opacity = "1"; // Show the first slide
 
     setInterval(() => {
@@ -31,13 +36,11 @@ function startSlideshow() {
     }, 3000);
 }
 
-
 // Function to show love note
 document.getElementById("openLoveNote").addEventListener("click", function() {
     document.getElementById("loveNote").classList.remove("hidden");
     document.getElementById("openLoveNote").classList.add("hidden");
 });
-
 
 // Function to create floating hearts
 function createHeart() {

@@ -16,23 +16,21 @@ function startSlideshow() {
     let slides = document.querySelectorAll(".slide");
     let index = 0;
 
-    // Initially, hide all slides
-    slides.forEach(slide => slide.style.opacity = "0");
+    if (slides.length === 0) {
+        console.error("No slides found!");
+        return;
+    }
 
-    // Show the first slide
-    slides[index].style.opacity = "1";
+    slides.forEach(slide => slide.style.opacity = "0"); // Hide all
+    slides[index].style.opacity = "1"; // Show the first slide
 
     setInterval(() => {
-        // Hide the current slide
-        slides[index].style.opacity = "0";
-
-        // Move to the next slide (loop back if at the last one)
-        index = (index + 1) % slides.length;
-
-        // Show the next slide
-        slides[index].style.opacity = "1";
-    }, 3000); // Change slide every 3 seconds
+        slides[index].style.opacity = "0"; // Hide current slide
+        index = (index + 1) % slides.length; // Move to next slide
+        slides[index].style.opacity = "1"; // Show next slide
+    }, 3000);
 }
+
 
 // Function to show love note
 document.getElementById("openLoveNote").addEventListener("click", function() {
@@ -40,10 +38,6 @@ document.getElementById("openLoveNote").addEventListener("click", function() {
     document.getElementById("openLoveNote").classList.add("hidden");
 });
 
-// Function to close love note
-function closeLoveNote() {
-    document.getElementById("loveNote").classList.add("hidden");
-}
 
 // Function to create floating hearts
 function createHeart() {

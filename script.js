@@ -34,8 +34,8 @@ function createHeart() {
 
     setTimeout(() => {
         heart.remove();
-    }, 5000); // Remove after 5 seconds
+    }, 10000); // Remove after 5 seconds
 }
 
 // Generate floating hearts at intervals (lowered for mobile performance)
-setInterval(createHeart, 500);
+setInterval(createHeart, 200);

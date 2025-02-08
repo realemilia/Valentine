@@ -1,6 +1,7 @@
 .hidden {
-    display: none; /* Hides initially */
+    display: none;
 }
+
 
 body {
     text-align: center;

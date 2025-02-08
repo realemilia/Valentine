@@ -24,7 +24,7 @@ function closeLoveNote() {
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
-    heart.innerHTML = '❤';
+    heart.innerHTML = '❤️';
 
     heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
     heart.style.top = "-20px"; // Start slightly above the screen

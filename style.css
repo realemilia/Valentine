@@ -8,12 +8,13 @@ body {
     color: white;
     font-family: Arial, sans-serif;
 }
-
 @media (max-width: 768px) {
+    .slideshow-container {
+        max-width: 90%; /* Adjust slideshow width for smaller screens */
+    }
+
     .slideshow-container img {
-        width: 90%; /* Make images fit the screen */
-        height: auto;
-        position: relative;
+        max-height: 300px; /* Adjust height for better mobile view */
     }
 }
 
@@ -38,6 +39,13 @@ button {
     max-width: 600px; /* Adjust based on your preferred size */
     margin: auto;
 }
+.slideshow-container img {
+    width: 100%;
+    height: auto; /* Ensures image maintains aspect ratio */
+    max-height: 400px; /* Adjust based on your design */
+    object-fit: contain; /* Prevents stretching */
+}
+
 
 .slideshow {
     position: relative;

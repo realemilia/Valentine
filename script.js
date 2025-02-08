@@ -36,9 +36,20 @@ function startSlideshow() {
     }, 3000);
 }
 
-// Function to show love note
+// Function to show love note properly
 document.getElementById("openLoveNote").addEventListener("click", function() {
-    document.getElementById("loveNote").classList.remove("hidden");
+    let loveNote = document.getElementById("loveNote");
+
+    if (!loveNote) {
+        console.error("Love Note element not found!");
+        return;
+    }
+
+    loveNote.classList.remove("hidden");
+    loveNote.style.display = "block"; // Ensure it's visible
+    loveNote.style.opacity = "1"; // Smooth visibility
+    loveNote.style.transition = "opacity 1s ease-in-out"; // Smooth fade-in effect
+
     document.getElementById("openLoveNote").classList.add("hidden");
 });
 

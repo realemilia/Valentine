@@ -24,14 +24,16 @@ function closeLoveNote() {
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
-    heart.innerHTML = '💖';
+    heart.innerHTML = '❤';
+
     heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+    heart.style.top = "-10px"; // Start from a bit above the screen
+    heart.style.animationDuration = Math.random() * 3 + 3 + 's';
 
     document.getElementById('hearts-container').appendChild(heart);
 
     setTimeout(() => {
-        heart.remove(); // Fixed bug (was `heart.remove;`)
+        heart.remove();
     }, 5000);
 }
 

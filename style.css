@@ -48,19 +48,17 @@ button {
 
 
 .slideshow {
-    position: relative;
-    width: 90%;
-    max-width: 500px;
-    height: 300px;
-    margin: auto;
+    display: flex;
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    height: 100vh; /* Full screen */
 }
 
-.slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    animation: fade 9s infinite;
+.slideshow img {
+    max-width: 90%; /* Ensures images fit */
+    max-height: 80vh; /* Prevents huge images */
+    object-fit: cover; /* Avoids distortion */
+    border-radius: 10px; /* Optional: rounded edges */
 }
 
 .slide:nth-child(1) { animation-delay: 0s; }

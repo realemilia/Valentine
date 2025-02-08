@@ -8,6 +8,13 @@ body {
     color: white;
     font-family: Arial, sans-serif;
 }
+@media (max-width: 768px) {
+    .slideshow-container img {
+        width: 90%; /* Make images fit the screen */
+        height: auto;
+        position: relative;
+    }
+}
 
 button {
     position: absolute;
@@ -103,3 +110,4 @@ button {
         opacity: 0;
     }
 }
+

@@ -3,11 +3,36 @@ document.getElementById("startSlideshow").addEventListener("click", function() {
     document.getElementById("startSlideshow").classList.add("hidden"); 
     document.getElementById("bgMusic").play(); // Start music
 
+    startSlideshow(); // Start cycling through images
+
     // Delay showing "Open Love Note" button until the slideshow completes
     setTimeout(() => {
         document.getElementById("openLoveNote").classList.remove("hidden");
     }, 27000); // 9 images × 3 seconds each
 });
+
+// Function to handle the slideshow manually
+function startSlideshow() {
+    let slides = document.querySelectorAll(".slide");
+    let index = 0;
+
+    // Initially, hide all slides
+    slides.forEach(slide => slide.style.opacity = "0");
+
+    // Show the first slide
+    slides[index].style.opacity = "1";
+
+    setInterval(() => {
+        // Hide the current slide
+        slides[index].style.opacity = "0";
+
+        // Move to the next slide (loop back if at the last one)
+        index = (index + 1) % slides.length;
+
+        // Show the next slide
+        slides[index].style.opacity = "1";
+    }, 3000); // Change slide every 3 seconds
+}
 
 // Function to show love note
 document.getElementById("openLoveNote").addEventListener("click", function() {
@@ -34,7 +59,7 @@ function createHeart() {
 
     setTimeout(() => {
         heart.remove();
-    }, 10000); // Remove after 5 seconds
+    }, 5000); // Remove after 5 seconds
 }
 
 // Generate floating hearts at intervals (lowered for mobile performance)

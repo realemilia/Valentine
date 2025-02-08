@@ -24,17 +24,17 @@ function closeLoveNote() {
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
-    heart.innerHTML = '❤';
+    heart.innerHTML = '💖';
 
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.top = "-10px"; // Start from a bit above the screen
-    heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+    heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+    heart.style.top = "-20px"; // Start slightly above the screen
+    heart.style.animationDuration = Math.random() * 3 + 2 + 's'; // Random fall speed
 
     document.getElementById('hearts-container').appendChild(heart);
 
     setTimeout(() => {
         heart.remove();
-    }, 5000);
+    }, 5000); // Remove after 5 seconds
 }
 
 // Generate floating hearts at intervals (lowered for mobile performance)
